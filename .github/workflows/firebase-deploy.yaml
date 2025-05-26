@@ -33,4 +33,4 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
-          firebase deploy --only functions --project michael-nunn-personal-website
+          firebase deploy --only functions --project personal-website-b0a21
