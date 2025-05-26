@@ -11,7 +11,13 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
 
       - name: Set up Python 3.10.x
         uses: actions/setup-python@v4
@@ -30,7 +36,5 @@ jobs:
           pip install -r requirements.txt
 
       - name: Deploy Firebase Functions
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           firebase deploy --only functions --project personal-website-b0a21
