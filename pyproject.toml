@@ -1,6 +1,0 @@
-[[tool.mypy.overrides]]
-module = [
-    "firebase_admin.*",
-    "firebase_functions.*",
-]
-follow_untyped_imports = true
