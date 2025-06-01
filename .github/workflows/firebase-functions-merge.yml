@@ -17,7 +17,7 @@ jobs:
         id: auth
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PERSONAL_WEBSITE_B0A21 }}
 
       - name: Set up Node.js 22.x
         uses: actions/setup-node@v4
