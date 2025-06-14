@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import AboutSection from "./components/AboutSection";
+import ExperienceSection from "./components/ExperienceSection";
+import EducationSection from "./components/EducationSection";
+import SkillsSection from "./components/SkillsSection";
+import InterestsSection from "./components/InterestsSection";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [resumeData, setResumeData] = useState(null);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5001/personal-website-b0a21/us-central1/getResume")
+      .then((res) => res.json())
+      .then((data) => setResumeData(data));
+  }, []);
+
+  if (!resumeData) return <p>Loading...</p>;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main className="p-6 max-w-4xl mx-auto">
+      <AboutSection about={resumeData.about} />
+      <ExperienceSection experience={resumeData.experience} />
+      <EducationSection education={resumeData.education} />
+      <SkillsSection skills={resumeData.skills} />
+      <InterestsSection interests={resumeData.interests} />
+    </main>
+  );
 }
-
-export default App
