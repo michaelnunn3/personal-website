@@ -17,12 +17,53 @@ export default function App() {
   if (!resumeData) return <p>Loading...</p>;
 
   return (
-    <main className="p-6 max-w-4xl mx-auto">
-      <AboutSection about={resumeData.about} />
-      <ExperienceSection experience={resumeData.experience} />
-      <EducationSection education={resumeData.education} />
-      <SkillsSection skills={resumeData.skills} />
-      <InterestsSection interests={resumeData.interests} />
-    </main>
+    <div className="flex min-h-screen">
+      {/* Sidebar Navigation */}
+      <nav className="w-48 bg-gray-100 p-6 space-y-4 text-sm sticky top-0 h-screen">
+        <a href="#about" className="block text-gray-700 hover:text-blue-600">
+          About
+        </a>
+        <a
+          href="#experience"
+          className="block text-gray-700 hover:text-blue-600"
+        >
+          Experience
+        </a>
+        <a
+          href="#education"
+          className="block text-gray-700 hover:text-blue-600"
+        >
+          Education
+        </a>
+        <a href="#skills" className="block text-gray-700 hover:text-blue-600">
+          Skills
+        </a>
+        <a
+          href="#interests"
+          className="block text-gray-700 hover:text-blue-600"
+        >
+          Interests
+        </a>
+      </nav>
+
+      {/* Main Content */}
+      <main className="flex-1 p-6 space-y-16">
+        <section id="about">
+          <AboutSection about={resumeData.about} />
+        </section>
+        <section id="experience">
+          <ExperienceSection experience={resumeData.experience} />
+        </section>
+        <section id="education">
+          <EducationSection education={resumeData.education} />
+        </section>
+        <section id="skills">
+          <SkillsSection skills={resumeData.skills} />
+        </section>
+        <section id="interests">
+          <InterestsSection interests={resumeData.interests} />
+        </section>
+      </main>
+    </div>
   );
 }
