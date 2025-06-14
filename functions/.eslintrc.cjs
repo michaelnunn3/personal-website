@@ -7,7 +7,7 @@ module.exports = {
     sourceType: "module",
     ecmaVersion: 2022,
   },
-  extends: ["eslint:recommended", "google", "prettier"],
+  extends: ["eslint:recommended", "google", "plugin:prettier/recommended"],
   rules: {
     "no-restricted-globals": ["error", "name", "length"],
     "prefer-arrow-callback": "error",
