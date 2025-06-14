@@ -1,35 +1,69 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import AboutSection from "./components/AboutSection";
+import ExperienceSection from "./components/ExperienceSection";
+import EducationSection from "./components/EducationSection";
+import SkillsSection from "./components/SkillsSection";
+import InterestsSection from "./components/InterestsSection";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [resumeData, setResumeData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://getresume-lqrykgpuka-uc.a.run.app")
+      .then((res) => res.json())
+      .then((data) => setResumeData(data));
+  }, []);
+
+  if (!resumeData) return <p>Loading...</p>;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <div className="flex min-h-screen">
+      {/* Sidebar Navigation */}
+      <nav className="w-48 bg-gray-100 p-6 space-y-4 text-sm sticky top-0 h-screen">
+        <a href="#about" className="block text-gray-700 hover:text-blue-600">
+          About
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a
+          href="#experience"
+          className="block text-gray-700 hover:text-blue-600"
+        >
+          Experience
         </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+        <a
+          href="#education"
+          className="block text-gray-700 hover:text-blue-600"
+        >
+          Education
+        </a>
+        <a href="#skills" className="block text-gray-700 hover:text-blue-600">
+          Skills
+        </a>
+        <a
+          href="#interests"
+          className="block text-gray-700 hover:text-blue-600"
+        >
+          Interests
+        </a>
+      </nav>
 
-export default App
+      {/* Main Content */}
+      <main className="flex-1 p-6 space-y-16">
+        <section id="about">
+          <AboutSection about={resumeData.about} />
+        </section>
+        <section id="experience">
+          <ExperienceSection experience={resumeData.experience} />
+        </section>
+        <section id="education">
+          <EducationSection education={resumeData.education} />
+        </section>
+        <section id="skills">
+          <SkillsSection skills={resumeData.skills} />
+        </section>
+        <section id="interests">
+          <InterestsSection interests={resumeData.interests} />
+        </section>
+      </main>
+    </div>
+  );
+}
