@@ -9,7 +9,7 @@ export default function App() {
   const [resumeData, setResumeData] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5001/personal-website-b0a21/us-central1/getResume")
+    fetch("https://getresume-lqrykgpuka-uc.a.run.app")
       .then((res) => res.json())
       .then((data) => setResumeData(data));
   }, []);
