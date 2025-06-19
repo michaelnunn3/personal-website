@@ -25,8 +25,8 @@ export default function App() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      {/* Sidebar Navigation */}
-      <nav className="w-64 bg-white shadow-md p-6 border-r border-gray-200 h-screen sticky top-0">
+      {/* Desktop Sidebar */}
+      <nav className="hidden md:flex w-64 bg-white shadow-md p-6 border-r border-gray-200 h-screen sticky top-0">
         <div className="flex flex-col items-center justify-center h-full space-y-6">
           <img
             src="/profile.jpg"
