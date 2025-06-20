@@ -6,11 +6,11 @@ import {
   LightBulbIcon,
   StarIcon,
 } from "@heroicons/react/24/outline";
-import AboutSection from "./components/AboutSection";
-import ExperienceSection from "./components/ExperienceSection";
-import EducationSection from "./components/EducationSection";
-import SkillsSection from "./components/SkillsSection";
-import InterestsSection from "./components/InterestsSection";
+import AboutSection from "./components/resume/AboutSection";
+import ExperienceSection from "./components/resume/ExperienceSection";
+import EducationSection from "./components/resume/EducationSection";
+import SkillsSection from "./components/resume/SkillsSection";
+import InterestsSection from "./components/resume/InterestsSection";
 
 export default function App() {
   const [resumeData, setResumeData] = useState(null);
