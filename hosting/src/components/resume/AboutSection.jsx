@@ -9,7 +9,7 @@ import clsx from "clsx";
 
 export default function AboutSection({ about }) {
   return (
-    <section className="mb-12">
+    <section className="py-20 max-w-6xl mx-auto px-4">
       {/* Name */}
       <h1 className="text-5xl font-extrabold text-gray-900">{about.name}</h1>
 
@@ -32,7 +32,7 @@ export default function AboutSection({ about }) {
       </div>
 
       {/* Bio */}
-      <div className="mt-6 text-gray-700 leading-relaxed max-w-[100ch]">
+      <div className="mt-6 text-gray-700 leading-relaxed">
         <p>{about.bio}</p>
       </div>
 
