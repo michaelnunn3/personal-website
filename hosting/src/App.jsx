@@ -79,43 +79,45 @@ export default function App() {
   }
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      {/* Sidebar - responsive */}
-      <Sidebar />
+    <div className="min-h-screen bg-gray-50">
+      <div className="flex min-h-screen">
+        {/* Sidebar - responsive */}
+        <Sidebar />
 
-      {/* Main Content - responsive */}
-      <main className="flex-1 md:pl-8 md:pr-8">
-        <section
-          id="about"
-          className="min-h-screen flex items-center px-4 md:px-8"
-        >
-          <AboutSection about={resumeData.about} />
-        </section>
-        <section
-          id="experience"
-          className="min-h-screen flex items-center px-4 md:px-8"
-        >
-          <ExperienceSection experience={resumeData.experience} />
-        </section>
-        <section
-          id="education"
-          className="min-h-screen flex items-center px-4 md:px-8"
-        >
-          <EducationSection education={resumeData.education} />
-        </section>
-        <section
-          id="skills"
-          className="min-h-screen flex items-center px-4 md:px-8"
-        >
-          <SkillsSection skills={resumeData.skills} />
-        </section>
-        <section
-          id="interests"
-          className="min-h-screen flex items-center px-4 md:px-8"
-        >
-          <InterestsSection interests={resumeData.interests} />
-        </section>
-      </main>
+        {/* Main Content - responsive */}
+        <main className="flex-1 md:pl-8 md:pr-8 bg-gray-50">
+          <section
+            id="about"
+            className="min-h-screen flex items-center px-4 md:px-8"
+          >
+            <AboutSection about={resumeData.about} />
+          </section>
+          <section
+            id="experience"
+            className="min-h-screen flex items-center px-4 md:px-8"
+          >
+            <ExperienceSection experience={resumeData.experience} />
+          </section>
+          <section
+            id="education"
+            className="min-h-screen flex items-center px-4 md:px-8"
+          >
+            <EducationSection education={resumeData.education} />
+          </section>
+          <section
+            id="skills"
+            className="min-h-screen flex items-center px-4 md:px-8"
+          >
+            <SkillsSection skills={resumeData.skills} />
+          </section>
+          <section
+            id="interests"
+            className="min-h-screen flex items-center px-4 md:px-8"
+          >
+            <InterestsSection interests={resumeData.interests} />
+          </section>
+        </main>
+      </div>
     </div>
   );
 }
