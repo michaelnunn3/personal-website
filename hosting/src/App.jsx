@@ -87,11 +87,12 @@ export default function App() {
         </div>
 
         {/* Main Content - responsive */}
-        <main className="flex-1 md:ml-64 bg-gray-50">
+        <main className="flex-1 md:ml-64 bg-gray-50 pt-16 md:pt-0">
           <section
             id="about"
             className={clsx(
-              "min-h-screen flex items-center justify-center px-4 md:px-8"
+              "min-h-screen flex items-center justify-center px-4 md:px-8",
+              "py-8 md:py-12"
             )}
           >
             <div className="w-full max-w-4xl">
@@ -101,7 +102,8 @@ export default function App() {
           <section
             id="experience"
             className={clsx(
-              "min-h-screen flex items-center justify-center px-4 md:px-8"
+              "min-h-screen flex items-center justify-center px-4 md:px-8",
+              "py-8 md:py-12"
             )}
           >
             <div className="w-full max-w-4xl">
@@ -111,7 +113,8 @@ export default function App() {
           <section
             id="education"
             className={clsx(
-              "min-h-screen flex items-center justify-center px-4 md:px-8"
+              "min-h-screen flex items-center justify-center px-4 md:px-8",
+              "py-8 md:py-12"
             )}
           >
             <div className="w-full max-w-4xl">
@@ -121,7 +124,8 @@ export default function App() {
           <section
             id="skills"
             className={clsx(
-              "min-h-screen flex items-center justify-center px-4 md:px-8"
+              "min-h-screen flex items-center justify-center px-4 md:px-8",
+              "py-8 md:py-12"
             )}
           >
             <div className="w-full max-w-4xl">
@@ -131,7 +135,8 @@ export default function App() {
           <section
             id="interests"
             className={clsx(
-              "min-h-screen flex items-center justify-center px-4 md:px-8"
+              "min-h-screen flex items-center justify-center px-4 md:px-8",
+              "py-8 md:py-12"
             )}
           >
             <div className="w-full max-w-4xl">
