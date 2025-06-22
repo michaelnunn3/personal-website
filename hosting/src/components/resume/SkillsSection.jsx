@@ -20,10 +20,7 @@ export default function SkillsSection({ skills }) {
   ];
 
   return (
-    <section
-      className="py-20 max-w-6xl mx-auto px-4"
-      aria-labelledby="skills-heading"
-    >
+    <div aria-labelledby="skills-heading">
       <h2
         id="skills-heading"
         className={clsx(
@@ -66,6 +63,6 @@ export default function SkillsSection({ skills }) {
           </article>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

@@ -9,10 +9,7 @@ import clsx from "clsx";
 
 export default function AboutSection({ about }) {
   return (
-    <section
-      className="py-20 max-w-6xl mx-auto px-4"
-      aria-labelledby="about-heading"
-    >
+    <div aria-labelledby="about-heading">
       {/* Name */}
       <h1
         id="about-heading"
@@ -100,6 +97,6 @@ export default function AboutSection({ about }) {
           />
         </a>
       </div>
-    </section>
+    </div>
   );
 }

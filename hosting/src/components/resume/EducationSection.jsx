@@ -2,10 +2,7 @@ import clsx from "clsx";
 
 export default function EducationSection({ education }) {
   return (
-    <section
-      className="py-20 max-w-6xl mx-auto px-4"
-      aria-labelledby="education-heading"
-    >
+    <div aria-labelledby="education-heading">
       <h2
         id="education-heading"
         className={clsx(
@@ -50,6 +47,6 @@ export default function EducationSection({ education }) {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

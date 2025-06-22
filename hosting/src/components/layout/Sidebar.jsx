@@ -57,7 +57,7 @@ export default function Sidebar() {
           // Base styles
           "bg-slate-700 shadow-md p-6 border-r border-gray-200",
           // Desktop styles
-          "md:w-64 md:h-screen md:sticky md:top-0",
+          "md:w-64 md:h-screen",
           // Mobile styles
           "fixed top-0 left-0 h-full w-80 z-40 transform",
           "transition-transform duration-300 ease-in-out",

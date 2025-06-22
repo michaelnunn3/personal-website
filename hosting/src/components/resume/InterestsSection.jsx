@@ -2,10 +2,7 @@ import clsx from "clsx";
 
 export default function InterestsSection({ interests }) {
   return (
-    <section
-      className="py-20 max-w-6xl mx-auto px-4"
-      aria-labelledby="interests-heading"
-    >
+    <div aria-labelledby="interests-heading">
       <h2
         id="interests-heading"
         className={clsx(
@@ -28,6 +25,6 @@ export default function InterestsSection({ interests }) {
           </div>
         </article>
       </div>
-    </section>
+    </div>
   );
 }

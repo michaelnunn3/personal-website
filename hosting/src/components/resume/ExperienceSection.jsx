@@ -17,10 +17,7 @@ export default function ExperienceSection({ experience }) {
   };
 
   return (
-    <section
-      className="py-20 max-w-6xl mx-auto px-4"
-      aria-labelledby="experience-heading"
-    >
+    <div aria-labelledby="experience-heading">
       <h2
         id="experience-heading"
         className={clsx(
@@ -67,6 +64,6 @@ export default function ExperienceSection({ experience }) {
           </article>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
