@@ -91,8 +91,8 @@ export default function App() {
           <section
             id="about"
             className={clsx(
-              "min-h-screen flex items-center justify-center px-4 md:px-8",
-              "py-8 md:py-12"
+              "min-h-screen px-4 md:px-8 py-16 md:py-24",
+              "flex items-center justify-center"
             )}
           >
             <div className="w-full max-w-4xl">
@@ -102,8 +102,8 @@ export default function App() {
           <section
             id="experience"
             className={clsx(
-              "min-h-screen flex items-center justify-center px-4 md:px-8",
-              "py-8 md:py-12"
+              "px-4 md:px-8 py-16 md:py-24",
+              "flex items-center justify-center"
             )}
           >
             <div className="w-full max-w-4xl">
@@ -113,8 +113,8 @@ export default function App() {
           <section
             id="education"
             className={clsx(
-              "min-h-screen flex items-center justify-center px-4 md:px-8",
-              "py-8 md:py-12"
+              "px-4 md:px-8 py-16 md:py-24",
+              "flex items-center justify-center"
             )}
           >
             <div className="w-full max-w-4xl">
@@ -124,8 +124,8 @@ export default function App() {
           <section
             id="skills"
             className={clsx(
-              "min-h-screen flex items-center justify-center px-4 md:px-8",
-              "py-8 md:py-12"
+              "px-4 md:px-8 py-16 md:py-24",
+              "flex items-center justify-center"
             )}
           >
             <div className="w-full max-w-4xl">
@@ -135,8 +135,8 @@ export default function App() {
           <section
             id="interests"
             className={clsx(
-              "min-h-screen flex items-center justify-center px-4 md:px-8",
-              "py-8 md:py-12"
+              "px-4 md:px-8 py-16 md:py-24",
+              "flex items-center justify-center"
             )}
           >
             <div className="w-full max-w-4xl">
