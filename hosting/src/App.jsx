@@ -79,13 +79,15 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <div className="flex min-h-screen">
         {/* Sidebar - responsive */}
-        <Sidebar />
+        <div className="md:fixed md:left-0 md:top-0 md:h-screen md:z-10">
+          <Sidebar />
+        </div>
 
         {/* Main Content - responsive */}
-        <main className="flex-1 md:pl-8 md:pr-8 bg-gray-50">
+        <main className="flex-1 md:pl-8 md:pr-8 md:ml-64 bg-gray-50">
           <section
             id="about"
             className="min-h-screen flex items-center px-4 md:px-8"
