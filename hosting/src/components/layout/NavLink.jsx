@@ -1,8 +1,12 @@
 import clsx from "clsx";
 
-export default function NavLink({ targetId, label, icon }) {
+export default function NavLink({ targetId, label, icon, onClick }) {
   const handleClick = () => {
     document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+    // Close mobile menu after navigation
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (

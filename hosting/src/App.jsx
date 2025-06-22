@@ -45,7 +45,7 @@ export default function App() {
               "border-gray-900 mx-auto mb-4"
             )}
           ></div>
-          <p className="text-gray-600 text-lg">Loading resume...</p>
+          <p className="text-gray-600 text-lg">Running cloud functions...</p>
         </div>
       </div>
     );
@@ -80,27 +80,39 @@ export default function App() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      {/* Desktop Sidebar */}
+      {/* Sidebar - responsive */}
       <Sidebar />
 
-      {/* Main Content */}
-      <main className="flex-1 pl-8 pr-8">
-        <section id="about" className="min-h-screen flex items-center px-8">
+      {/* Main Content - responsive */}
+      <main className="flex-1 md:pl-8 md:pr-8">
+        <section
+          id="about"
+          className="min-h-screen flex items-center px-4 md:px-8"
+        >
           <AboutSection about={resumeData.about} />
         </section>
         <section
           id="experience"
-          className="min-h-screen flex items-center px-8"
+          className="min-h-screen flex items-center px-4 md:px-8"
         >
           <ExperienceSection experience={resumeData.experience} />
         </section>
-        <section id="education" className="min-h-screen flex items-center px-8">
+        <section
+          id="education"
+          className="min-h-screen flex items-center px-4 md:px-8"
+        >
           <EducationSection education={resumeData.education} />
         </section>
-        <section id="skills" className="min-h-screen flex items-center px-8">
+        <section
+          id="skills"
+          className="min-h-screen flex items-center px-4 md:px-8"
+        >
           <SkillsSection skills={resumeData.skills} />
         </section>
-        <section id="interests" className="min-h-screen flex items-center px-8">
+        <section
+          id="interests"
+          className="min-h-screen flex items-center px-4 md:px-8"
+        >
           <InterestsSection interests={resumeData.interests} />
         </section>
       </main>
