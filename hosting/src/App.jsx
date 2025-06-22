@@ -87,36 +87,56 @@ export default function App() {
         </div>
 
         {/* Main Content - responsive */}
-        <main className="flex-1 md:pl-8 md:pr-8 md:ml-64 bg-gray-50">
+        <main className="flex-1 md:ml-64 bg-gray-50">
           <section
             id="about"
-            className="min-h-screen flex items-center px-4 md:px-8"
+            className={clsx(
+              "min-h-screen flex items-center justify-center px-4 md:px-8"
+            )}
           >
-            <AboutSection about={resumeData.about} />
+            <div className="w-full max-w-4xl">
+              <AboutSection about={resumeData.about} />
+            </div>
           </section>
           <section
             id="experience"
-            className="min-h-screen flex items-center px-4 md:px-8"
+            className={clsx(
+              "min-h-screen flex items-center justify-center px-4 md:px-8"
+            )}
           >
-            <ExperienceSection experience={resumeData.experience} />
+            <div className="w-full max-w-4xl">
+              <ExperienceSection experience={resumeData.experience} />
+            </div>
           </section>
           <section
             id="education"
-            className="min-h-screen flex items-center px-4 md:px-8"
+            className={clsx(
+              "min-h-screen flex items-center justify-center px-4 md:px-8"
+            )}
           >
-            <EducationSection education={resumeData.education} />
+            <div className="w-full max-w-4xl">
+              <EducationSection education={resumeData.education} />
+            </div>
           </section>
           <section
             id="skills"
-            className="min-h-screen flex items-center px-4 md:px-8"
+            className={clsx(
+              "min-h-screen flex items-center justify-center px-4 md:px-8"
+            )}
           >
-            <SkillsSection skills={resumeData.skills} />
+            <div className="w-full max-w-4xl">
+              <SkillsSection skills={resumeData.skills} />
+            </div>
           </section>
           <section
             id="interests"
-            className="min-h-screen flex items-center px-4 md:px-8"
+            className={clsx(
+              "min-h-screen flex items-center justify-center px-4 md:px-8"
+            )}
           >
-            <InterestsSection interests={resumeData.interests} />
+            <div className="w-full max-w-4xl">
+              <InterestsSection interests={resumeData.interests} />
+            </div>
           </section>
         </main>
       </div>
