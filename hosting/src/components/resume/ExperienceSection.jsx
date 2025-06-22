@@ -7,39 +7,64 @@ export default function ExperienceSection({ experience }) {
     return dateB - dateA;
   });
 
+  const formatDate = (dateString) => {
+    if (dateString.toLowerCase() === "present") return "Present";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+    });
+  };
+
   return (
-    <section className="py-20 max-w-6xl mx-auto px-4">
+    <section
+      className="py-20 max-w-6xl mx-auto px-4"
+      aria-labelledby="experience-heading"
+    >
       <h2
+        id="experience-heading"
         className={clsx(
-          "text-3xl font-extrabold uppercase mb-8 tracking-wide text-gray-900"
+          "text-3xl font-extrabold uppercase mb-8",
+          "tracking-wide text-gray-900"
         )}
       >
         Experience
       </h2>
       <div className="grid gap-6">
         {sortedExperience.map((role, index) => (
-          <div
-            key={index}
-            className="border border-gray-200 rounded-xl shadow-sm p-6 bg-white"
+          <article
+            key={`${role.company}-${role.title}-${index}`}
+            className={clsx(
+              "border border-gray-200 rounded-xl shadow-sm",
+              "hover:shadow-md transition-shadow duration-200",
+              "p-6 bg-white"
+            )}
           >
             {/* Card Header */}
-            <div className="flex justify-between items-start mb-2">
-              <div>
-                <h3 className="text-lg font-bold text-gray-800">
+            <header className="flex justify-between items-start mb-3">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
                   {role.title}
                 </h3>
-                <p className="text-sm text-gray-600 font-medium">
+                <p className="text-base text-gray-600 font-semibold">
                   {role.company}
                 </p>
               </div>
-              <p className="text-sm text-gray-500 whitespace-nowrap">
-                {role.start_date} – {role.end_date}
-              </p>
-            </div>
+              <time
+                className={clsx(
+                  "text-sm text-gray-500 whitespace-nowrap",
+                  "ml-4 font-medium"
+                )}
+              >
+                {formatDate(role.start_date)} – {formatDate(role.end_date)}
+              </time>
+            </header>
 
             {/* Description */}
-            <p className="text-gray-700 leading-relaxed">{role.description}</p>
-          </div>
+            <div className="text-gray-700 leading-relaxed">
+              {role.description}
+            </div>
+          </article>
         ))}
       </div>
     </section>

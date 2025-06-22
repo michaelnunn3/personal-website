@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import clsx from "clsx";
 import AboutSection from "./components/resume/AboutSection";
 import ExperienceSection from "./components/resume/ExperienceSection";
 import EducationSection from "./components/resume/EducationSection";
@@ -8,14 +9,74 @@ import Sidebar from "./components/layout/Sidebar";
 
 export default function App() {
   const [resumeData, setResumeData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch("https://getresume-lqrykgpuka-uc.a.run.app")
-      .then((res) => res.json())
-      .then((data) => setResumeData(data));
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setResumeData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
   }, []);
 
-  if (!resumeData) return <p className="text-center mt-10">Loading...</p>;
+  if (loading) {
+    return (
+      <div
+        className={clsx(
+          "min-h-screen flex items-center justify-center",
+          "bg-gray-50"
+        )}
+      >
+        <div className="text-center">
+          <div
+            className={clsx(
+              "animate-spin rounded-full h-12 w-12 border-b-2",
+              "border-gray-900 mx-auto mb-4"
+            )}
+          ></div>
+          <p className="text-gray-600 text-lg">Loading resume...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div
+        className={clsx(
+          "min-h-screen flex items-center justify-center",
+          "bg-gray-50"
+        )}
+      >
+        <div className="text-center">
+          <p className="text-red-600 text-lg mb-2">
+            Failed to load resume data
+          </p>
+          <p className="text-gray-500">Error: {error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className={clsx(
+              "mt-4 px-4 py-2 bg-gray-900 text-white rounded-lg",
+              "hover:bg-gray-800 transition-colors"
+            )}
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -23,7 +84,7 @@ export default function App() {
       <Sidebar />
 
       {/* Main Content */}
-      <main className="flex-1">
+      <main className="flex-1 pl-8 pr-8">
         <section id="about" className="min-h-screen flex items-center px-8">
           <AboutSection about={resumeData.about} />
         </section>
