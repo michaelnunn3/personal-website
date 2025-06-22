@@ -1,27 +1,54 @@
+import {
+  CodeBracketIcon,
+  EnvelopeIcon,
+  MapPinIcon,
+  PhoneIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/outline";
+import clsx from "clsx";
+
 export default function AboutSection({ about }) {
   return (
-    <section className="mb-8">
-      <h1 className="text-3xl font-bold">{about.name}</h1>
-      <p className="mt-2 text-gray-700">{about.bio}</p>
-      <ul className="mt-4 text-sm text-gray-600 space-y-1">
-        <li>
-          <strong>Email:</strong>{" "}
-          <a href={`mailto:${about.email}`}>{about.email}</a>
-        </li>
-        <li>
-          <strong>Phone:</strong> {about.phone}
-        </li>
-        <li>
-          <strong>Address:</strong> {about.address}
-        </li>
-        <li>
-          <strong>GitHub:</strong> <a href={about.github}>{about.github}</a>
-        </li>
-        <li>
-          <strong>LinkedIn:</strong>{" "}
-          <a href={about.linkedin}>{about.linkedin}</a>
-        </li>
-      </ul>
+    <section className="mb-12">
+      {/* Name */}
+      <h1 className="text-5xl font-extrabold text-gray-900">{about.name}</h1>
+
+      {/* Contact Line */}
+      <div className="flex flex-wrap items-center gap-4 mt-2 text-gray-600 text-sm">
+        <div className="flex items-center gap-1">
+          <EnvelopeIcon className="w-4 h-4" />
+          <a href={`mailto:${about.email}`} className="hover:underline">
+            {about.email}
+          </a>
+        </div>
+        <div className="flex items-center gap-1">
+          <PhoneIcon className="w-4 h-4" />
+          <span>{about.phone}</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <MapPinIcon className="w-4 h-4" />
+          <span>{about.address}</span>
+        </div>
+      </div>
+
+      {/* Bio */}
+      <div className="mt-6 text-gray-700 leading-relaxed max-w-[100ch]">
+        <p>{about.bio}</p>
+      </div>
+
+      {/* Social Icons */}
+      <div className="flex gap-4 mt-6">
+        <a href={about.linkedin} target="_blank" rel="noopener noreferrer">
+          <UserCircleIcon
+            className={clsx("w-8 h-8 text-gray-700 hover:text-blue-600")}
+          />
+        </a>
+        <a href={about.github} target="_blank" rel="noopener noreferrer">
+          <CodeBracketIcon
+            className={clsx("w-8 h-8 text-gray-700 hover:text-blue-600")}
+          />
+        </a>
+      </div>
     </section>
   );
 }
