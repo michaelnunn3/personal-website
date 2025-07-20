@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Card from "../layout/Card";
 
 export default function InterestsSection({ interests }) {
   return (
@@ -6,24 +7,18 @@ export default function InterestsSection({ interests }) {
       <h2
         id="interests-heading"
         className={clsx(
-          "text-3xl font-extrabold uppercase mb-8",
-          "tracking-wide text-gray-900"
+          "text-3xl sm:text-4xl font-extrabold uppercase mb-8",
+          "tracking-wide text-slate-900"
         )}
       >
         Interests
       </h2>
       <div className="grid gap-6">
-        <article
-          className={clsx(
-            "border border-gray-200 rounded-xl shadow-sm",
-            "hover:shadow-md transition-shadow duration-200",
-            "p-6 bg-white"
-          )}
-        >
-          <div className="text-gray-700 leading-relaxed">
+        <Card>
+          <div className="text-slate-700 leading-relaxed">
             <p>{interests}</p>
           </div>
-        </article>
+        </Card>
       </div>
     </div>
   );
