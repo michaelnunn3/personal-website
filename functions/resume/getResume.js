@@ -13,7 +13,33 @@ export const getResume = onRequest(
         return res.status(404).json({ error: "Resume not found" });
       }
 
-      return res.status(200).json(doc.data());
+      const resumeData = doc.data();
+
+      if (resumeData.experience && Array.isArray(resumeData.experience)) {
+        resumeData.experience = resumeData.experience.sort((a, b) => {
+          const parseDate = (dateString) => {
+            if (dateString.toLowerCase() === "present") {
+              return new Date();
+            }
+
+            let date = new Date(dateString);
+
+            if (isNaN(date)) {
+              const normalized = `01 ${dateString}`;
+              date = new Date(normalized);
+            }
+
+            return date;
+          };
+
+          const dateA = parseDate(a.end_date);
+          const dateB = parseDate(b.end_date);
+
+          return dateB - dateA;
+        });
+      }
+
+      return res.status(200).json(resumeData);
     } catch (err) {
       console.error("Error retrieving resume:", err);
       return res.status(500).json({ error: "Internal Server Error" });
