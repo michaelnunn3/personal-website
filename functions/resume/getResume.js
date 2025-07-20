@@ -32,8 +32,8 @@ export const getResume = onRequest(
             return date;
           };
 
-          const dateA = parseDate(a.start_date);
-          const dateB = parseDate(b.start_date);
+          const dateA = parseDate(a.end_date);
+          const dateB = parseDate(b.end_date);
 
           return dateB - dateA;
         });
