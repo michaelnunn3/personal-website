@@ -30,7 +30,7 @@ export default function AboutSection({ about }) {
           <EnvelopeIcon className="w-4 h-4" />
           <a
             href={`mailto:${about.email}`}
-            className={clsx("hover:underline transition-colors duration-150")}
+            className="hover:underline transition-colors duration-150"
           >
             {about.email}
           </a>
