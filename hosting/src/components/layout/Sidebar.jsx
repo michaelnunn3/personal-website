@@ -30,9 +30,7 @@ export default function Sidebar() {
         onClick={toggleSidebar}
         className={clsx(
           "fixed top-4 left-4 z-50 p-3 rounded-lg",
-          "bg-slate-700 text-white shadow-lg md:hidden",
-          "focus:outline-none focus:ring-2 focus:ring-slate-500",
-          "focus:ring-offset-2"
+          "bg-slate-700 text-white shadow-lg md:hidden"
         )}
         aria-label="Toggle navigation menu"
       >
@@ -60,7 +58,7 @@ export default function Sidebar() {
           "bg-slate-700 shadow-md p-6 border-r border-slate-200",
           // Desktop styles
           "md:w-64 md:h-screen",
-          // Mobile styles - improved responsive width
+          // Mobile styles
           "fixed top-0 left-0 h-full w-72 sm:w-80 z-40 transform",
           "transition-transform duration-300 ease-in-out",
           "md:transform-none md:transition-none",
@@ -70,7 +68,6 @@ export default function Sidebar() {
         <div
           className={clsx(
             "flex flex-col items-center justify-center h-full space-y-6",
-            // Add top padding on mobile to account for close button
             "pt-12 md:pt-0"
           )}
         >
@@ -79,7 +76,6 @@ export default function Sidebar() {
             alt="Headshot"
             className={clsx(
               "rounded-full border-4 border-slate-600 shadow",
-              // Improved responsive sizing
               "w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40"
             )}
           />

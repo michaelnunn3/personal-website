@@ -30,11 +30,7 @@ export default function AboutSection({ about }) {
           <EnvelopeIcon className="w-4 h-4" />
           <a
             href={`mailto:${about.email}`}
-            className={clsx(
-              "hover:underline transition-colors duration-150",
-              "focus:outline-none focus:ring-2 focus:ring-slate-500",
-              "focus:ring-offset-2 rounded"
-            )}
+            className={clsx("hover:underline transition-colors duration-150")}
           >
             {about.email}
           </a>
@@ -66,9 +62,7 @@ export default function AboutSection({ about }) {
           className={clsx(
             "p-2 rounded-lg border border-slate-200 bg-white",
             "hover:shadow-md hover:border-blue-300",
-            "transition-all duration-200",
-            "focus:outline-none focus:ring-2 focus:ring-slate-500",
-            "focus:ring-offset-2"
+            "transition-all duration-200"
           )}
           aria-label="LinkedIn Profile"
         >
@@ -86,9 +80,7 @@ export default function AboutSection({ about }) {
           className={clsx(
             "p-2 rounded-lg border border-slate-200 bg-white",
             "hover:shadow-md hover:border-slate-400",
-            "transition-all duration-200",
-            "focus:outline-none focus:ring-2 focus:ring-slate-500",
-            "focus:ring-offset-2"
+            "transition-all duration-200"
           )}
           aria-label="GitHub Profile"
         >
