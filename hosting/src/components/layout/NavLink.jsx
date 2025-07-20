@@ -14,7 +14,9 @@ export default function NavLink({ targetId, label, icon, onClick }) {
       onClick={handleClick}
       className={clsx(
         "flex items-center gap-3 px-3 py-2 rounded w-full text-left transition",
-        "text-stone-300 hover:text-slate-700 hover:bg-stone-300"
+        "text-slate-300 hover:text-slate-700 hover:bg-slate-300",
+        "focus:outline-none focus:ring-2 focus:ring-slate-500",
+        "focus:ring-offset-2 focus:ring-offset-slate-700"
       )}
     >
       {icon}

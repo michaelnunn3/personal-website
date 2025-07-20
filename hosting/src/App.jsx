@@ -35,17 +35,17 @@ export default function App() {
       <div
         className={clsx(
           "min-h-screen flex items-center justify-center",
-          "bg-gray-50"
+          "bg-slate-50"
         )}
       >
         <div className="text-center">
           <div
             className={clsx(
               "animate-spin rounded-full h-12 w-12 border-b-2",
-              "border-gray-900 mx-auto mb-4"
+              "border-slate-700 mx-auto mb-4"
             )}
           ></div>
-          <p className="text-gray-600 text-lg">Running cloud functions...</p>
+          <p className="text-slate-600 text-lg">Running cloud functions...</p>
         </div>
       </div>
     );
@@ -56,19 +56,21 @@ export default function App() {
       <div
         className={clsx(
           "min-h-screen flex items-center justify-center",
-          "bg-gray-50"
+          "bg-slate-50"
         )}
       >
         <div className="text-center">
           <p className="text-red-600 text-lg mb-2">
             Failed to load resume data
           </p>
-          <p className="text-gray-500">Error: {error}</p>
+          <p className="text-slate-500">Error: {error}</p>
           <button
             onClick={() => window.location.reload()}
             className={clsx(
-              "mt-4 px-4 py-2 bg-gray-900 text-white rounded-lg",
-              "hover:bg-gray-800 transition-colors"
+              "mt-4 px-4 py-2 bg-slate-700 text-white rounded-lg",
+              "hover:bg-slate-800 transition-colors",
+              "focus:outline-none focus:ring-2 focus:ring-slate-500",
+              "focus:ring-offset-2"
             )}
           >
             Retry
@@ -79,7 +81,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 overflow-x-hidden">
       <div className="flex min-h-screen">
         {/* Sidebar - responsive */}
         <div className="md:fixed md:left-0 md:top-0 md:h-screen md:z-10">
@@ -87,11 +89,11 @@ export default function App() {
         </div>
 
         {/* Main Content - responsive */}
-        <main className="flex-1 md:ml-64 bg-gray-50 pt-16 md:pt-0">
+        <main className="flex-1 md:ml-64 bg-slate-50 pt-16 md:pt-0">
           <section
             id="about"
             className={clsx(
-              "min-h-screen px-4 md:px-8 py-16 md:py-24",
+              "min-h-screen px-4 md:px-8 py-20",
               "flex items-center justify-center"
             )}
           >
@@ -102,7 +104,7 @@ export default function App() {
           <section
             id="experience"
             className={clsx(
-              "px-4 md:px-8 py-16 md:py-24",
+              "px-4 md:px-8 py-20",
               "flex items-center justify-center"
             )}
           >
@@ -113,7 +115,7 @@ export default function App() {
           <section
             id="education"
             className={clsx(
-              "px-4 md:px-8 py-16 md:py-24",
+              "px-4 md:px-8 py-20",
               "flex items-center justify-center"
             )}
           >
@@ -124,7 +126,7 @@ export default function App() {
           <section
             id="skills"
             className={clsx(
-              "px-4 md:px-8 py-16 md:py-24",
+              "px-4 md:px-8 py-20",
               "flex items-center justify-center"
             )}
           >
@@ -135,7 +137,7 @@ export default function App() {
           <section
             id="interests"
             className={clsx(
-              "px-4 md:px-8 py-16 md:py-24",
+              "px-4 md:px-8 py-20",
               "flex items-center justify-center"
             )}
           >
