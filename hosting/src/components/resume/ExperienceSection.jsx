@@ -1,12 +1,6 @@
 import clsx from "clsx";
 
 export default function ExperienceSection({ experience }) {
-  const sortedExperience = [...experience].sort((a, b) => {
-    const dateA = new Date(a.start_date);
-    const dateB = new Date(b.start_date);
-    return dateB - dateA;
-  });
-
   const formatDate = (dateString) => {
     if (dateString.toLowerCase() === "present") return "Present";
     const date = new Date(dateString);
@@ -28,7 +22,7 @@ export default function ExperienceSection({ experience }) {
         Experience
       </h2>
       <div className="grid gap-6">
-        {sortedExperience.map((role, index) => (
+        {experience.map((role, index) => (
           <article
             key={`${role.company}-${role.title}-${index}`}
             className={clsx(
