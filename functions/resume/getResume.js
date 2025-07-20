@@ -15,12 +15,27 @@ export const getResume = onRequest(
 
       const resumeData = doc.data();
 
-      // Sort experience section if it exists
       if (resumeData.experience && Array.isArray(resumeData.experience)) {
         resumeData.experience = resumeData.experience.sort((a, b) => {
-          const dateA = new Date(a.start_date);
-          const dateB = new Date(b.start_date);
-          return dateB - dateA; // Sort by start_date descending (newest first)
+          const parseDate = (dateString) => {
+            if (dateString.toLowerCase() === "present") {
+              return new Date();
+            }
+
+            let date = new Date(dateString);
+
+            if (isNaN(date)) {
+              const normalized = `01 ${dateString}`;
+              date = new Date(normalized);
+            }
+
+            return date;
+          };
+
+          const dateA = parseDate(a.start_date);
+          const dateB = parseDate(b.start_date);
+
+          return dateB - dateA;
         });
       }
 
