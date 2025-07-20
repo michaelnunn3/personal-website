@@ -1,15 +1,6 @@
 import clsx from "clsx";
 
 export default function ExperienceSection({ experience }) {
-  const formatDate = (dateString) => {
-    if (dateString.toLowerCase() === "present") return "Present";
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-    });
-  };
-
   return (
     <div aria-labelledby="experience-heading">
       <h2
@@ -47,7 +38,7 @@ export default function ExperienceSection({ experience }) {
                   "ml-4 font-medium"
                 )}
               >
-                {formatDate(role.start_date)} – {formatDate(role.end_date)}
+                {role.start_date} – {role.end_date}
               </time>
             </header>
 
